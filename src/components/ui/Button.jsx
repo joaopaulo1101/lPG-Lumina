@@ -1,13 +1,14 @@
 function Button({ children, variant = "primary" }) {
-  const styles = {
+  const variants = {
     primary:
-      "bg-black text-white px-6 py-3 hover:opacity-90 transition",
+      "bg-[#2C2B28] text-white px-8 py-4 uppercase tracking-[0.15em] text-xs hover:bg-[#B8977E] transition-all duration-300",
+
     outline:
-      "border border-black px-6 py-3 hover:bg-black hover:text-white transition",
+      "border border-[#C9BEB4] px-8 py-4 uppercase tracking-[0.15em] text-xs hover:bg-[#2C2B28] hover:text-white transition-all duration-300",
   };
 
   return (
-    <button className={styles[variant]}>
+    <button className={variants[variant]}>
       {children}
     </button>
   );
