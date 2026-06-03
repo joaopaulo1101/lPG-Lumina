@@ -4,14 +4,57 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
   background: #FAFAF8;
   color: #2C2B28;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .font-display {
   font-family: 'Cormorant Garamond', serif;
+}
+
+::selection {
+  background: #E9DED4;
+  color: #2C2B28;
+}
+
+.skip-link {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 100;
+  transform: translateY(-140%);
+  background: #2C2B28;
+  color: #FFFFFF;
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #B8977E;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
